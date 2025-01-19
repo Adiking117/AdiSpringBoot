@@ -1,0 +1,61 @@
+# Compiled class files
+*.class
+
+# Package files
+*.jar
+*.war
+*.ear
+
+# Logs
+logs/
+*.log
+*.out
+
+# Spring Boot specific
+spring.log
+
+# Maven specific
+target/
+!.mvn/wrapper/maven-wrapper.jar
+
+# Gradle specific
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+
+# IntelliJ IDEA specific
+*.iml
+.idea/
+out/
+
+# Eclipse specific
+*.classpath
+*.project
+*.settings/
+
+# VS Code specific
+.vscode/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Sensitive files
+application.properties
+application.yml
+.env
+
+# Test output
+test-output/
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+*~
+
+# Other
+*.bak
+*.old
+*.orig
+*.rej
