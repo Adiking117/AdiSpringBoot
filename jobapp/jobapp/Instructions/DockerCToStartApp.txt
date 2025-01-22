@@ -1,0 +1,35 @@
+Steps to Run Application on Docker Container:
+1. Create a Dockerfile
+The Dockerfile defines the instructions to containerize your application.
+
+2. Update pom.xml (Optional)
+Ensure your pom.xml is configured to create an executable JAR file. (maven-plugin)
+
+3. Build the Application
+Package the application as a JAR file using Maven.
+mvn clean package
+
+This creates a JAR file (e.g., jobapp-0.0.1-SNAPSHOT.jar) in the target directory.
+
+4. Create a docker-compose.yml (Optional)
+
+5. Build the Docker Image
+docker build -t jobapp:latest .
+
+6. Run the Docker Container
+docker run -p 8080:8080 --name jobapp-container jobapp:latest
+
+7. Verify the Application
+Access the application at http://localhost:8080.
+
+8. Push the Image to Docker Hub (Optional)
+To share your Docker image, push it to Docker Hub:
+
+Log in to Docker Hub:
+docker login
+
+Tag the image:
+docker tag jobapp:latest <your-dockerhub-username>/jobapp:latest
+
+Push the image:
+docker push <your-dockerhub-username>/jobapp:latest

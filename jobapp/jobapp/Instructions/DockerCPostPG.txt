@@ -1,0 +1,50 @@
+docker run -d --name db -e POSTGRES_PASSWORD=adiking postgres
+
+docker run -d --name pgadmin -e PGADMIN_DEFAULT_EMAIL=adi@gmail.com -e PGADMIN_DEFAULT_PASSWORD=adiking dpage/pgadmin4
+
+To Check Network between them
+docker exec -it pgadmin ping db
+
+To Remove both
+docker rm -f db pgadmin
+
+To Create Network
+docker --network my-network
+
+Now Run
+docker run -d --name db --network my-network -e POSTGRES_PASSWORD=adiking postgres
+docker run -d --name pgadmin --network my-network -e PGADMIN_DEFAULT_EMAIL=adi@gmail.com -e PGADMIN_DEFAULT_PASSWORD=adiking dpage/pgadmin4
+
+
+Start the PostgreSQL service:
+
+docker run -d \
+--name postgres_container \
+-e POSTGRES_USER=embarkx \
+-e POSTGRES_PASSWORD=embarkx \
+-e PGDATA=/data/postgres \
+-v postgres:/data/postgres \
+p 5432:5432 \
+--network postgres \
+--restart unless-stopped \
+postgres
+
+
+Start the pgAdmin service:
+
+docker run -d \
+--name pgadmin_container \
+-e PGADMIN DEFAULT_EMAIL=pgadmin4@pgadmin.org \
+-e PGADMIN DEFAULT PASSWORD=admin\
+-e PGADMIN_CONFIG_SERVER_MODE=False \
+-v pgadmin:/var/lib/pgadmin \
+-p 5050:80 \
+--network postgres \
+--restart unless-stopped \
+dpage/pgadmin4
+
+
+OR
+use docker-compose.yml
+just run 
+docker compose up -d
