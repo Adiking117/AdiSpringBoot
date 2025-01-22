@@ -1,0 +1,11 @@
+2025-01-22 09:58:30.044132+05:30 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SELECT * FROM COMPANY JOB [*]JOB"; SQL statement:
+SELECT * FROM COMPANY JOB JOB [42000-232]
+2025-01-22 12:17:58.824685+05:30 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SELECT * FROM COMPANY \000d\000a\000d\000adelete [*]from company where id = 8"; SQL statement:
+SELECT * FROM COMPANY 
+
+delete from company where id = 8 [42000-232]
+2025-01-22 12:19:17.913029+05:30 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "JOBS" not found; SQL statement:
+delete from jobs [42102-232]
