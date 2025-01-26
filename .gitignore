@@ -41,7 +41,6 @@ out/
 Thumbs.db
 
 # Sensitive files
-application.properties
 application.yml
 .env
 
