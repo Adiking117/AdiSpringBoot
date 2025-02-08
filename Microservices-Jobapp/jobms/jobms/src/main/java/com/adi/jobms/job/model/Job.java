@@ -22,7 +22,7 @@ public class Job {
         this.id = id;
         this.title = title;
         this.description = description;
-        Salary = salary;
+        this.Salary = salary;
         this.location = location;
     }
 

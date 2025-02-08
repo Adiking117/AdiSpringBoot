@@ -24,8 +24,8 @@ public class JobController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Job> getJobById(@PathVariable long id){
-        return ResponseEntity.ok(jobService.getJobById(id));
+    public ResponseEntity<JobResponse> getJobById(@PathVariable long id){
+        return ResponseEntity.ok(new JobResponse("Job fetched successfully",jobService.getJobById(id)));
     }
 
     @PostMapping("/add")
